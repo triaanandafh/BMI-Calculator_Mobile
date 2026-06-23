@@ -28,5 +28,21 @@ void hitungBMI(double tinggiCm, double beratKg, List riwayat) {
     kategori = "Obesitas";
   }
 
+  // Simpan hasil ke riwayat dalam bentuk Map (Non-Primitive Data Type)
+  riwayat.add({
+    'tinggi': tinggiCm,
+    'berat': beratKg,
+    'bmi': bmi.toStringAsFixed(2), // Dibulatkan agar rapi
+    'kategori': kategori
+  });
 }
 
+void tampilkanRiwayat(List riwayat) {
+  print("========== RIWAYAT PERHITUNGAN BMI ==========");
+  for (var i = 0; i < riwayat.length; i++) {
+    print("Data ke-${i + 1}:");
+    print("Tinggi: ${riwayat[i]['tinggi']} cm, Berat: ${riwayat[i]['berat']} kg");
+    print("BMI: ${riwayat[i]['bmi']}, Kategori: ${riwayat[i]['kategori']}");
+    print("---------------------------------------------");
+  }
+}
